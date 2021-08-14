@@ -22,11 +22,11 @@
     color: var(--charcoal)
 
 }
-#search-container{
-
+#search-bar-label{
+    
 }
 #search-bar{
-
+    display: block;
 }
 #submit{
 
