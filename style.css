@@ -40,15 +40,25 @@
     justify-content: center;
     background-color: var(--persian-green);
 }
+
+/* todo: add queries for this. note card design breaks at viewport width of about 1070px */
+
 .note-card {
     margin: 10px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 20vw;
     height: 35vh;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     border: black solid;
     background-color: var(--sandy-brown);
+    min-width: 20vh;
+}
 
+.note-body{
+    text-align: center;
+    max-width: 80%;
+    word-wrap: break-word;
 }
