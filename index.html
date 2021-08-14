@@ -5,10 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap" rel="stylesheet">
+    <title>Note Taking App</title>
+    <!--So I’m thinking each note has a title and a body. It needs a form for those inputs and a submit button. 
+        Maybe it displays those notes as cards in a sort of grid? Each note can be deleted and edited. 
+        Maybe a button to delete all of them. And a search bar to filter notes through keywords-->
 </head>
 <body>
-    
+    <!--Delete All-->
+    <button id="delete-all">
+        <p>Delete All Notes</p> 
+    </button>
+
+    <form id="new-note-container">
+        <p>Create New Note</p>
+        
+        <label for="add-title">Title</label>
+        <input type="text" id="add-title" name="add-title" placeholder="(OPTIONAL) Groceries">
+
+        <label for="add-note">Note</label>
+        <input type="text" id="add-note" name="add-note" placeholder="Pick up Milk" required="required">
+
+        <button id="submit" type="submit">
+            <span class="material-icons">search</span>
+        </button>
+    </form>
+
+    <!--Search bar-->
+    <form id="search-bar-container">
+        <p>Find your notes here</p>
+        <input id="search-bar" name="search" placeholder="Ex: 'Groceries'">
+        <button id="submit" type="submit">
+            <span class="material-icons">search</span>
+        </button>
+    </form>
+
+    <!--Note Card Grid-->
+    <div id="note-card-container">
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+        <p class="note-card"> Notes will show up here</p>
+    </div>
 
     <script src="main.js"></script>
 </body>
