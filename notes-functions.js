@@ -45,13 +45,10 @@ const deleteAllNotes = (notes) => {
 //Dylan's code ends here
 //TO DO: 
     //Fix search bar
-        //Searchbar is functional, but it doesn't refresh when the bar is cleared. 
-        //Need to find a way to have items pop back up when search bar is cleared.
         //Need to maintain background size/color when nothing is found. 
         //Add a "No items found" section?
+            // add styles for this?
     //Fix Delete Button
-        //Delete button is functional, but it all previous notes repopulate when a new one is enetered. 
-        //Need to permanently remove all previous notes.
         //Need to maintain background size/color when notes are deleted.
     //Update CSS
         //Maybe make the notes look more like sticky notes? 
@@ -106,6 +103,7 @@ const createNote = () => {
     });
 };
 
+// I
 const updateFilters = (filters) =>{
     searchBar.addEventListener('input', (e) =>{
         filters.searchText = e.target.value.toLowerCase();
