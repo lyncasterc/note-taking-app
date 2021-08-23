@@ -1,22 +1,23 @@
 //Dylan's code starts here
-function searchbar() {
-    //Get input in searchbar and set it toLowerCase.
-    //Get all notecards.
-    let input = document.getElementById('search-bar').value
-    input=input.toLowerCase();
-    let noteCard = document.getElementsByClassName('note-card');
+// function searchbar() {
+//     //Get input in searchbar and set it toLowerCase.
+//     //Get all notecards.
+//     let input = document.getElementById('search-bar').value
+//     input=input.toLowerCase();
+//     let noteCard = document.getElementsByClassName('note-card');
 
-    for (i = 0; i < noteCard.length; i++) { 
-        //If notecard HTML doesn't match input, display nothing.
-        if (!noteCard[i].innerHTML.toLowerCase().includes(input)) {
-            noteCard[i].style.display="none";
-        }
-        //else display matching items
-        else {
-            noteCard[i].style.display="item";                 
-        }
-    }
-}
+//     for (i = 0; i < noteCard.length; i++) { 
+//         //If notecard HTML doesn't match input, display nothing.
+//         if (!noteCard[i].innerHTML.toLowerCase().includes(input)) {
+//             noteCard[i].style.display="none";
+//         }
+//         //else display matching items
+//         else {
+//             noteCard[i].style.display="item";                 
+//         }
+//     }
+// }
+
 //Grab delete-all id, create event listener.
 const deleteNotes = document.querySelector('#delete-all')
 deleteNotes.addEventListener('click', function(){
