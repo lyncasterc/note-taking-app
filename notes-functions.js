@@ -59,6 +59,10 @@ deleteNotes.addEventListener('click', function(){
         //Create, Delete, and Search in one flex with their own sections?
 
 const renderNotes = (notes, filters) => {
+    const filteredNotes = notes.filter(note => {
+        return note.body.toLowerCase().includes(filters.searchText) || 
+        note.title.toLowerCase().includes(filters.searchText);
+    });
     notesContainer.innerHTML = '';
 
     notes.forEach(note => {
