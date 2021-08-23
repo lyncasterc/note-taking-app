@@ -10,3 +10,4 @@ const filters = {
 
 renderNotes(notes, filters);
 createNote();
+updateFilters(filters);
