@@ -19,29 +19,29 @@
 // }
 
 //Grab delete-all id, create event listener.
-const deleteNotes = document.querySelector('#delete-all')
-deleteNotes.addEventListener('click', function(){
-    //change delete-popup id to display block (previous display none to hide)
-    const deleteDiv = document.querySelector('#delete-popup');
-    deleteDiv.style.display = "block";
-    //grab delete-yes button add event listener
-    const confirmDelete = document.querySelector('#delete-yes')
-    confirmDelete.addEventListener('click',function(){
-        //grab all notecards and remove them. 
-        const noteCards = document.querySelectorAll('.note-card');
-        for (const notecard of noteCards) {
-            notecard.remove();
-        }
-        //reset the pop-up to display none (re-hides the popup)
-        deleteDiv.style.display = "none";
-    })
-    //grab the delete-no id buttom and reset the display style to none to hide the popup.
-    const denyDelete = document.querySelector('#delete-no')
-    denyDelete.addEventListener('click',function(){
-        deleteDiv.style.display = "none";
-    })
+const deleteAllNotes = (notes) => {
+    deleteAllButton.addEventListener('click', function(){
+        //change delete-popup id to display block (previous display none to hide)
+        const deleteDiv = document.querySelector('#delete-popup');
+        deleteDiv.style.display = "block";
+        //grab delete-yes button add event listener
+        const confirmDelete = document.querySelector('#delete-yes')
+        confirmDelete.addEventListener('click', function(){
+            notes = []; //clearing the notes array
+            localStorage.setItem('notes', JSON.stringify(notes)); // saving notes array to storage
+            location.reload(); // reloading the page, which rerenders all the notes.
 
-})
+            //reset the pop-up to display none (re-hides the popup)
+            deleteDiv.style.display = "none";
+        })
+        //grab the delete-no id buttom and reset the display style to none to hide the popup.
+        const denyDelete = document.querySelector('#delete-no')
+        denyDelete.addEventListener('click', function() {
+            deleteDiv.style.display = "none";
+        })
+    })
+}; 
+
 //Dylan's code ends here
 //TO DO: 
     //Fix search bar
@@ -58,6 +58,7 @@ deleteNotes.addEventListener('click', function(){
         //Search bar and buttons need some styling.
     //Update HTML Layout
         //Create, Delete, and Search in one flex with their own sections?
+
 
 const renderNotes = (notes, filters) => {
     const filteredNotes = notes.filter(note => {
