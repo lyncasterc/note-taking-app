@@ -64,6 +64,15 @@ const renderNotes = (notes, filters) => {
         note.title.toLowerCase().includes(filters.searchText);
     });
     notesContainer.innerHTML = '';
+    
+    // display message if no notes are found, else render the filtered notes
+    if(filteredNotes.length === 0){
+        notesContainer.textContent = 'No notes found.';
+    } else {
+        filteredNotes.forEach(note => {
+            const noteCard = document.createElement('div');
+            const noteTitle = document.createElement('h2');
+            const noteBody = document.createElement('p');
 
     notes.forEach(note => {
         const noteCard = document.createElement('p');
