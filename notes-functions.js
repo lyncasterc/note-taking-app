@@ -74,12 +74,17 @@ const renderNotes = (notes, filters) => {
             const noteTitle = document.createElement('h2');
             const noteBody = document.createElement('p');
 
-    notes.forEach(note => {
-        const noteCard = document.createElement('p');
-        noteCard.classList.add('note-card');
-        noteCard.textContent = note.body;
-        notesContainer.appendChild(noteCard);
-    });
+            noteCard.classList.add('note-card');
+            noteTitle.classList.add('note-title');
+            noteBody.classList.add('note-body');
+            noteTitle.textContent = note.title;
+            noteBody.textContent = note.body;
+
+            noteCard.appendChild(noteTitle);
+            noteCard.appendChild(noteBody);
+            notesContainer.appendChild(noteCard);
+        });
+    }
 };
 
 const createNote = () => {
