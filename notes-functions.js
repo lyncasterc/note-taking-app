@@ -104,26 +104,9 @@ const createNote = () => {
     });
 };
 
-const updateFilters = () =>{
-    search.addEventListener('input', (e) =>{
+const updateFilters = (filters) =>{
+    searchBar.addEventListener('input', (e) =>{
+        filters.searchText = e.target.value.toLowerCase();
+        renderNotes(notes, filters);
     });
 }
-
-//LYNCASTERC'S PREVIOUS COMMENTS: 
-//todo: finish updateFilters:
-    // I've added an event listener to the searchbar. 
-    // It is listening for input and will fire every time user enters anything 
-    // into the search bar.
-
-    // Function should update the searchText key value located
-    // in the filters object in main.js (line 7)
-    // If user types 'groceries' into searchbar, filters.searchText should equal 'groceries', etc
-    // User input should be made lowercase for case insensitivity. 
-    // You also need to call renderTodos inside the event listener.
-    // call updateFilters in main.js when fininshed
-
-
-//todo: add line in renderNotes() (line 1 in this file) that creates a filteredNotes array that filters the notes array for the notes
-    //that includes the searchText in the title OR body.
-    // make this case insensitive (toLowerCase)
-    // Replace the notes on line 4 of renderNotes with this filteredNotes array so that the function renders the filtered notes in DOM
