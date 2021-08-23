@@ -16,10 +16,19 @@
         Maybe a button to delete all of them. And a search bar to filter notes through keywords-->
 </head>
 <body>
-    <!--Delete All-->
     <button id="delete-all">
         <p>Delete All Notes</p> 
     </button>
+
+    <div id='delete-popup'>
+        <div id="popup-content">
+            <h1 id='delete-text'>Are you sure you want to delete all notes?</h1>
+            <div id='yes-no'>
+                <button id='delete-yes'>Yes</button>
+                <button id='delete-no'>No</button>
+            </div>
+        </div>
+    </div>
 
     <form id="new-note-container">
         <p>Create New Note</p>
@@ -38,7 +47,7 @@
     <!--Search bar-->
         <label id="search-bar-label">
             Find your notes here
-            <input id="search-bar" name="search" placeholder="Ex: 'Groceries'">
+            <input id="search-bar" name="search" placeholder="Ex: 'Groceries'" onkeyup="searchbar()">
         </label>
     
     <!--Note Card Grid-->
@@ -49,25 +58,6 @@
 
             <p class="note-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit iusto ut delectus quae dolores doloribus architecto perspiciatis repudiandae voluptatibus vitae, deleniti ab vel aut. Illo animi quibusdam aliquam consectetur obcaecati.</p>
         </div>
-<!-- 
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p>
-        <p class="note-card"> Notes will show up here</p> -->
     </div>
 
     <script src="./notes-functions.js"></script>
