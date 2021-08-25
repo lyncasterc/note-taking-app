@@ -7,6 +7,85 @@
     font-family: 'Sora', sans-serif;
     background-color: var(--orange-yellow-crayola);
 }
+#control-bar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
+#new-note-container{
+    display: flex;
+    border: black solid;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--sandy-brown);
+    color: var(--charcoal);
+    width: 33vw;
+    padding: 25px;
+}
+#note-card-container{
+    display: flex;
+    border: black solid;
+    margin-top: 1vh;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--persian-green);
+    min-height: 300px;
+}
+#search-bar-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+input{
+    text-align: center;
+}
+#delete-all-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+#delete-all{
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+    font-size: 28px;
+}
+#delete-text{
+    text-align: center;
+    text-decoration: underline;
+}
+#search-bar-label{
+    
+}
+#search-bar{
+    display: block;
+}
+#submit{
+}
+.note-card {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 35vh;
+    text-align: center;
+    border: black solid;
+    background-color: var(--sandy-brown);
+    min-width: 20vh;
+}
+.note-body{
+    text-align: center;
+    max-width: 80%;
+    word-wrap: break-word;
+}
 #delete-all{
 }
 #delete-popup {
@@ -28,66 +107,10 @@
     padding: 20px;
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
-  }
-#delete-text{
-    text-align: center;
-    text-decoration: underline;
 }
 #yes-no{
     display: flex;
     flex-direction: row;
     align-content: space-around;
     justify-content: space-around;
-}
-#new-note-container{
-    display: flex;
-    border: black solid;
-    margin-top: 1vh;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: var(--sandy-brown);
-    color: var(--charcoal)
-
-}
-#search-bar-label{
-    
-}
-#search-bar{
-    display: block;
-}
-#submit{
-
-}
-#note-card-container{
-    display: flex;
-    border: black solid;
-    margin-top: 1vh;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--persian-green);
-}
-
-/* todo: add queries for this. note card design breaks at viewport width of about 1070px */
-
-.note-card {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20vw;
-    height: 35vh;
-    text-align: center;
-    border: black solid;
-    background-color: var(--sandy-brown);
-    min-width: 20vh;
-}
-
-.note-body{
-    text-align: center;
-    max-width: 80%;
-    word-wrap: break-word;
 }

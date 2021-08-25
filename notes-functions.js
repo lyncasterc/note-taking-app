@@ -1,23 +1,3 @@
-//Dylan's code starts here
-// function searchbar() {
-//     //Get input in searchbar and set it toLowerCase.
-//     //Get all notecards.
-//     let input = document.getElementById('search-bar').value
-//     input=input.toLowerCase();
-//     let noteCard = document.getElementsByClassName('note-card');
-
-//     for (i = 0; i < noteCard.length; i++) { 
-//         //If notecard HTML doesn't match input, display nothing.
-//         if (!noteCard[i].innerHTML.toLowerCase().includes(input)) {
-//             noteCard[i].style.display="none";
-//         }
-//         //else display matching items
-//         else {
-//             noteCard[i].style.display="item";                 
-//         }
-//     }
-// }
-
 //Grab delete-all id, create event listener.
 const deleteAllNotes = (notes) => {
     deleteAllButton.addEventListener('click', function(){
@@ -41,20 +21,6 @@ const deleteAllNotes = (notes) => {
         })
     })
 }; 
-
-//Dylan's code ends here
-//TO DO: 
-    //Fix search bar
-        //Need to maintain background size/color when nothing is found. 
-        //Add a "No items found" section?
-            // add styles for this?
-    //Fix Delete Button
-        //Need to maintain background size/color when notes are deleted.
-    //Update CSS
-        //Maybe make the notes look more like sticky notes? 
-        //Search bar and buttons need some styling.
-    //Update HTML Layout
-        //Create, Delete, and Search in one flex with their own sections?
 
 
 const renderNotes = (notes, filters) => {
@@ -103,7 +69,6 @@ const createNote = () => {
     });
 };
 
-// I
 const updateFilters = (filters) =>{
     searchBar.addEventListener('input', (e) =>{
         filters.searchText = e.target.value.toLowerCase();
