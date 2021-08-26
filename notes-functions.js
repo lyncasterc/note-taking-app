@@ -39,6 +39,7 @@ const generateNoteDOM = () =>{
 
 
 const renderNotes = (notes, filters) => {
+    failedSearchMessage.textContent = '';
     const filteredNotes = notes.filter(note => {
         return note.body.toLowerCase().includes(filters.searchText) || 
         note.title.toLowerCase().includes(filters.searchText);
@@ -49,9 +50,9 @@ const renderNotes = (notes, filters) => {
         }
     });
     
-    // display message if no notes are found, else render the filtered notes
+    // display message if no notes are found while searching, else render the filtered notes
     if(filteredNotes.length === 0 && searchBar.value !== ''){
-        notesContainer.textContent = 'No notes found.';
+        failedSearchMessage.textContent = 'No notes found!';
     } else {
         filteredNotes.forEach(note => {
             const noteCard = generateNoteDOM();
