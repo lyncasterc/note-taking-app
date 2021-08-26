@@ -22,6 +22,21 @@ const deleteAllNotes = (notes) => {
     })
 }; 
 
+const generateNoteDOM = () =>{
+    const noteCard = document.createElement('div');
+    const noteTitle = document.createElement('h2');
+    const noteBody = document.createElement('p');
+
+    noteCard.classList.add('note-card');
+    noteTitle.classList.add('note-title');
+    noteBody.classList.add('note-body');
+
+    noteCard.appendChild(noteTitle);
+    noteCard.appendChild(noteBody);
+
+    return noteCard;
+};
+
 
 const renderNotes = (notes, filters) => {
     const filteredNotes = notes.filter(note => {
@@ -35,18 +50,9 @@ const renderNotes = (notes, filters) => {
         notesContainer.textContent = 'No notes found.';
     } else {
         filteredNotes.forEach(note => {
-            const noteCard = document.createElement('div');
-            const noteTitle = document.createElement('h2');
-            const noteBody = document.createElement('p');
-
-            noteCard.classList.add('note-card');
-            noteTitle.classList.add('note-title');
-            noteBody.classList.add('note-body');
-            noteTitle.textContent = note.title;
-            noteBody.textContent = note.body;
-
-            noteCard.appendChild(noteTitle);
-            noteCard.appendChild(noteBody);
+            const noteCard = generateNoteDOM();
+            noteCard.firstChild.textContent = note.title;
+            noteCard.lastChild.textContent = note.body;
             notesContainer.appendChild(noteCard);
         });
     }
@@ -74,4 +80,18 @@ const updateFilters = (filters) =>{
         filters.searchText = e.target.value.toLowerCase();
         renderNotes(notes, filters);
     });
+}
+
+// Helper function to create test notes to check styling
+    // createTestNotes(notes, filters, 10) => renders 10 notes in DOM
+    // Call in main.js as last function call
+const createTestNotes = (notes, filters, num) => {
+    for (let index = 0; index < num; index++) {
+        notes.push({
+            title: 'test',
+            body: 'test'
+        });
+    
+    }
+    renderNotes(notes, filters);
 }
