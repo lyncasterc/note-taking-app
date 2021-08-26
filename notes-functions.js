@@ -43,10 +43,14 @@ const renderNotes = (notes, filters) => {
         return note.body.toLowerCase().includes(filters.searchText) || 
         note.title.toLowerCase().includes(filters.searchText);
     });
-    notesContainer.innerHTML = '';
+    notesContainer.childNodes.forEach(note => {
+        if(note.id !== 'new-note-btn'){
+            note.remove();
+        }
+    });
     
     // display message if no notes are found, else render the filtered notes
-    if(filteredNotes.length === 0){
+    if(filteredNotes.length === 0 && searchBar.value !== ''){
         notesContainer.textContent = 'No notes found.';
     } else {
         filteredNotes.forEach(note => {
@@ -59,6 +63,11 @@ const renderNotes = (notes, filters) => {
 };
 
 const createNote = () => {
+    newNoteButton.addEventListener('click', (e) =>{
+        newNoteButton.style.display = 'none';
+        newNoteForm.style.display = 'block';
+    });
+
     newNoteForm.addEventListener('submit', (e) =>{
         e.preventDefault();
         const titleInput = e.target.elements[0];
@@ -71,6 +80,8 @@ const createNote = () => {
         bodyInput.value = '';
 
         localStorage.setItem('notes', JSON.stringify(notes));
+        newNoteButton.style.display = 'inline';
+        newNoteForm.style.display = 'none';
         renderNotes(notes, filters);
     });
 };
