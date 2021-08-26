@@ -15,14 +15,14 @@
 </head>
 <body>
     <div id="control-bar-container">
-        <form id="new-note-container">
+        <!-- <form id="new-note-container">
             <p>Create New Note</p>        
             <label for="add-title">Title</label>
                 <input type="text" id="add-title" name="add-title" placeholder="Groceries">
             <label for="add-note">Note</label>
                 <input type="text" id="add-note" name="add-note" placeholder="Milk, Bacon, Eggs" required="required">
             <button id="submit" type="submit"> Create </button> 
-        </form>
+        </form> -->
         <div id="search-bar-container">
             <label id="search-bar-label">
                 Find your notes here
@@ -37,12 +37,26 @@
     </div>
 
     <div id="note-card-container">
-        <div class="note-card">
-            <h2 class="note-title">Title here</h2>
-            <p class="note-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit iusto ut delectus quae dolores 
-                doloribus architecto perspiciatis repudiandae voluptatibus vitae, deleniti ab vel aut. Illo animi quibusdam aliquam 
-                consectetur obcaecati.</p>
+
+        <div id="new-note-btn" class="note-card">
+            <h2 class="note-title"><img id="add-btn" src="./add-icon.png" alt="Add a new note"></h2>
+            <form id="new-note-form">
+                <label for="title-input">Title
+                    <br>
+                    <input id="title-input" type="text" placeholder="Groceries"> 
+                </label>
+                <br>
+                <label for="body-input">
+                    Body 
+                    <br>
+                    <textarea id="body-input" cols="16" rows="3" required></textarea>
+                </label>
+                <br>
+                <button type="submit">Create</button>
+            </form>
         </div>
+
+    
     </div>
 
     <div id='delete-popup'>
