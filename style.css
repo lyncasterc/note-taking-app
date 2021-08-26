@@ -25,6 +25,11 @@
     width: 33vw;
     padding: 25px;
 }
+
+#new-note-form{
+    display: none;
+}
+
 #note-card-container{
     display: flex;
     border: black solid;
@@ -35,6 +40,8 @@
     background-color: var(--persian-green);
     min-height: 300px;
 }
+
+
 #search-bar-container{
     display: flex;
     flex-direction: column;
@@ -86,8 +93,16 @@ input{
     max-width: 80%;
     word-wrap: break-word;
 }
+
+#add-btn{
+    max-width: 5rem;
+    cursor: pointer;
+    transition: all 160ms ease-in;
+}
+
 #delete-all{
 }
+
 #delete-popup {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
