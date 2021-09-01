@@ -13,6 +13,8 @@
 	--navy: #1e3d59;
 	--almond: #f5f0e1;
 	--red-orange: #ff6e40;
+
+    background-color: var(--almond);
 }
 
 /* Global CSS */
