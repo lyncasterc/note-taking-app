@@ -1,132 +1,222 @@
-:root{
-    --charcoal: #264653ff;
-    --persian-green: #2a9d8fff;
-    --orange-yellow-crayola: #e9c46aff;
-    --sandy-brown: #f4a261ff;
-    --burnt-sienna: #e76f51ff;
-    font-family: 'Sora', sans-serif;
-    background-color: var(--orange-yellow-crayola);
-}
-#control-bar-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
-}
-#new-note-container{
-    display: flex;
-    border: black solid;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: var(--sandy-brown);
-    color: var(--charcoal);
-    width: 33vw;
-    padding: 25px;
+/* Root and wildcard all selections */
+:root {
+	/* --charcoal: #264653ff;
+--persian-green: #2a9d8fff;
+--orange-yellow-crayola: #e9c46aff;
+--sandy-brown: #f4a261ff;
+--burnt-sienna: #e76f51ff; */
+	/* Sticky note colors */
+	--yellow: #feff9c;
+	--pink: #d9138a;
+	--blue: #12a4d9;
+	--black: #322e2f;
+	--navy: #1e3d59;
+	--almond: #f5f0e1;
+	--red-orange: #ff6e40;
 }
 
-#new-note-form{
-    display: none;
+/* Global CSS */
+* {
+	font-family: "Patrick Hand", cursive;
+	color: var(--black);
 }
 
+/* Element selectors */
+input {
+	text-align: center;
+    outline: none;
+    caret-color: var(--red-orange);
+}
+input:focus::placeholder{
+    color: transparent;
 
-#note-card-container{
-    display: flex;
-    border: black solid;
-    margin-top: 1vh;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--persian-green);
-    min-height: 300px;
 }
 
+/* Control Bar (Search and  Delete) */
+#control-bar-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
 
-#search-bar-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+/* Search Bar */
+#search-bar-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
 }
-input{
-    text-align: center;
+#search-bar-label {
+	font-size: 3em;
+	font-weight: bold;
+	text-align: center;
+	color: var(--red-orange);
 }
-#delete-all-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+#search-bar {
+	font-size: 0.75em;
+	font-weight: bold;
+	border-radius: 15px;
+	border: var(--navy) thick solid;
+	display: block;
 }
-#delete-all{
-    width: 250px;
-    height: 150px;
-    border-radius: 10px;
-    font-size: 28px;
+#failed-search-alert {
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+	color: var(--red-orange);
 }
-#delete-text{
+
+/* Delete all button */
+#delete-all-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+#delete-all {
+	width: 250px;
+	height: 100px;
+	border-radius: 10px;
+	font-size: 28px;
+	border: var(--navy) thick solid;
+}
+#delete-all:hover {
+	opacity: 65%;
+}
+#delete-all-text {
+	color: var(--red-orange);
+	font-weight: bold;
+}
+
+/* Delete all popup */
+#delete-popup {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+#popup-content {
+	background-color: var(--almond);
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 5px solid var(--navy);
+	width: 50%; /* Could be more or less, depending on screen size */
+}
+#yes-no {
+	display: flex;
+	flex-direction: row;
+	align-content: space-around;
+	justify-content: space-around;
+}
+#delete-text {
+	color: var(--red-orange);
     text-align: center;
     text-decoration: underline;
 }
-#search-bar-label{
-    
+#delete-yes {
+	width: 200px;
+	height: 50px;
+	border: var(--navy) solid thick;
+	font-size: 24px;
+	font-weight: bold;
+	color: var(--red-orange);
 }
-#search-bar{
-    display: block;
+#delete-no {
+	width: 200px;
+	height: 50px;
+	border: var(--navy) solid thick;
+	font-size: 24px;
+	font-weight: bold;
+	color: var(--red-orange);
 }
-#submit{
+.delete-popup-buttons:hover {
+	opacity: 65%;
+}
+
+/* Entire note card container */
+#note-card-container {
+	display: flex;
+	margin-top: 1vh;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	min-height: 300px;
 }
 .note-card {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20vw;
-    height: 35vh;
-    text-align: center;
-    border: black solid;
-    background-color: var(--sandy-brown);
-    min-width: 20vh;
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 20vw;
+	height: 35vh;
+	text-align: center;
+	border: var(--navy) thick solid;
+	background-color: var(--yellow);
+	min-width: 20vh;
 }
-.note-body{
-    text-align: center;
+.note-body {
+	text-align: center;
     max-width: 80%;
-    word-wrap: break-word;
+	word-wrap: break-word;
+	color: var(--black);
+	font-size: 24px;
+}
+.note-title {
+	font-size: 36px;
+	margin-bottom: -20px;
 }
 
-#add-btn{
-    max-width: 5rem;
-    cursor: pointer;
-    transition: all 160ms ease-in;
+/* Add new notes*/
+#new-note-container {
+	display: flex;
+	border: var(--black) solid;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 33vw;
+	padding: 25px;
 }
-
-#delete-all{
+#new-note-title {
+	font-size: 24px;
+	font-weight: bold;
 }
-
-#delete-popup {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    
+#new-note-body {
+	font-size: 24px;
+	font-weight: bold;
 }
-#popup-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+#new-note-form {
+	display: none;
 }
-#yes-no{
-    display: flex;
-    flex-direction: row;
-    align-content: space-around;
-    justify-content: space-around;
+#title-input {
+	width: 15vw;
+	height: 5vh;
+	font-size: 20px;
+}
+#body-input {
+	width: 15vw;
+	height: 10vh;
+	font-size: 18px;
+	text-align: center;
+}
+#create-button {
+	width: 10vw;
+	height: 5vh;
+	font-size: 24px;
+	font-weight: bold;
+}
+#add-btn {
+	max-width: 5rem;
+	cursor: pointer;
+	transition: all 160ms ease-in;
+}
+#add-btn:hover {
+	opacity: 65%;
 }
