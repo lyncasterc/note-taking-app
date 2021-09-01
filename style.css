@@ -154,6 +154,7 @@ input:focus::placeholder{
 }
 .note-card {
 	margin: 10px;
+	/* margin-bottom: 25px; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
