@@ -51,7 +51,6 @@ const renderNotes = (notes, filters) => {
     //clearing all notes except for the new-note-btn
     notesContainerChildren.forEach(note => {
         if(note.id !== 'new-note-btn'){
-            console.log(notesContainerChildren.length);
             note.remove();
         }
     });
@@ -89,7 +88,6 @@ const createNote = () => {
         localStorage.setItem('notes', JSON.stringify(notes));
         newNoteButton.style.display = 'inline';
         newNoteForm.style.display = 'none';
-        console.log("boop" + notesContainer.childNodes.length);
         renderNotes(notes, filters);
     });
 };
