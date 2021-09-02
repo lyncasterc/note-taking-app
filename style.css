@@ -143,15 +143,18 @@ input:focus::placeholder{
 
 /* Entire note card container */
 #note-card-container {
-	display: flex;
+	/* display:flex; */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 23vw);
 	margin-top: 1vh;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	align-items: center;
-	justify-content: center;
+	/* justify-content: center; */
 	min-height: 300px;
 }
 .note-card {
 	margin: 10px;
+	/* margin-bottom: 25px; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

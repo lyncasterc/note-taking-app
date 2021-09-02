@@ -13,4 +13,4 @@ renderNotes(notes, filters);
 createNote();
 updateFilters(filters);
 deleteAllNotes(notes);
-// createTestNotes(notes, filters, 5);
+// createTestNotes(notes, filters, 4);
