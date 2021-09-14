@@ -139,14 +139,12 @@ input:focus::placeholder{
 
 /* Entire note card container */
 #note-card-container {
-	/* display:flex; */
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 23vw);
 	margin-top: 1vh;
 	margin-left: 18px;
-	/* flex-wrap: wrap; */
 	align-items: center;
-	/* justify-content: center; */
+	justify-items: center;
 	min-height: 300px;
 }
 .note-card {
@@ -195,8 +193,9 @@ input:focus::placeholder{
 	font-weight: bold;
 }
 #new-note-form {
-	display: none;
+	display: none;	
 }
+
 #title-input {
 	width: 15vw;
 	height: 5vh;
@@ -204,6 +203,7 @@ input:focus::placeholder{
 	border-radius: 15px;
 	border: solid var(--navy);
 }
+
 #body-input {
 	width: 15vw;
 	height: 10vh;
@@ -234,15 +234,86 @@ input:focus::placeholder{
 #add-btn:hover {
 	opacity: 65%;
 }
-@media only screen and (max-width: 600px) {
-	#control-bar-name-container{
-		flex-direction: column-reverse;
-		align-items: center;
+
+@media(min-width: 1025px) and (max-width: 1170px){
+	#note-card-container{
+		grid-template-columns: repeat(auto-fit, 30vw);
+		
+	}
+}
+
+@media(max-width: 1800px){
+
+	#new-note-form{
+		width: 100%;
+		height: 100%;
+	}
+
+	#title-input{
+		height: 15%;
+	}
+
+	#body-input, #title-input{
+		width: 80%;
+	}
+
+	#body-input{
+		height: 35%;	
+	}
+
+}
+
+@media(max-width: 1550px){
+	#body-input{
+		height: 25%;	
+	}
+}
+
+@media(max-width: 1300px){
+	
+	#create-button{
+		height: 4vh;
+	}
+}
+
+@media (max-width: 1024px ){
+
+	#control-bar-container {
+		flex-direction: column;
 		justify-content: center;
+		align-content: center;
+		margin-left: 0;
 	}
-	#title-container{
-		width: 0;
+
+	#note-card-container{
+		grid-template-columns: repeat(auto-fit, 47vw);
+		
 	}
+
+	.note-card{
+		min-width: none;
+		width: 90%;
+		height: 25vh;
+	}
+
+	#body-input, #title-input{
+		width: 70%;
+	}
+
+	#body-input{
+		height: 30%;	
+	}
+	
+
+	#create-button{
+		height: 4vh;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+
+
 	#control-bar-container {
 		flex-direction: column;
 		justify-content: center;
