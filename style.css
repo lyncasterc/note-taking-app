@@ -28,26 +28,15 @@ input {
 input:focus::placeholder{
     color: transparent;
 }
-
-#control-bar-name-container{
-	display: flex;
-	flex-direction: row;
-}
-#title-container{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 75em;
-}
 #title-logo{
-	width: 17em;
+	width: 22em;
 }
 /* Control Bar (Search and  Delete) */
 #control-bar-container {
 	display: flex;
-	flex-direction: column;
-	margin-left: 25px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
 }
 
 /* Search Bar */
@@ -79,8 +68,6 @@ input:focus::placeholder{
 #delete-all-container {
 	display: flex;
 	flex-direction: column;
-	margin-top: -40px;
-	margin-bottom: 20px;
 }
 #delete-all {
 	width: 250px;
