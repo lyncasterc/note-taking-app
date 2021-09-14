@@ -1,10 +1,5 @@
 /* Root and wildcard all selections */
 :root {
-	/* --charcoal: #264653ff;
---persian-green: #2a9d8fff;
---orange-yellow-crayola: #e9c46aff;
---sandy-brown: #f4a261ff;
---burnt-sienna: #e76f51ff; */
 	/* Sticky note colors */
 	--yellow: #feff9c;
 	--pink: #d9138a;
@@ -13,7 +8,8 @@
 	--navy: #1e3d59;
 	--almond: #f5f0e1;
 	--red-orange: #ff6e40;
-
+	margin: 0;
+	padding: 0;
     background-color: var(--almond);
 }
 
@@ -31,13 +27,15 @@ input {
 }
 input:focus::placeholder{
     color: transparent;
-
 }
-
+#title-logo{
+	width: 22em;
+}
 /* Control Bar (Search and  Delete) */
 #control-bar-container {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	justify-content: space-around;
 }
 
@@ -45,14 +43,12 @@ input:focus::placeholder{
 #search-bar-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-content: center;
 }
 #search-bar-label {
 	font-size: 3em;
 	font-weight: bold;
-	text-align: center;
 	color: var(--red-orange);
+	text-align: center;
 }
 #search-bar {
 	font-size: 0.75em;
@@ -72,22 +68,22 @@ input:focus::placeholder{
 #delete-all-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-content: center;
 }
 #delete-all {
 	width: 250px;
-	height: 100px;
+	height: 75px;
 	border-radius: 10px;
 	font-size: 28px;
 	border: var(--navy) thick solid;
 }
 #delete-all:hover {
-	opacity: 65%;
+	opacity: 75%;
 }
 #delete-all-text {
 	color: var(--red-orange);
 	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 /* Delete all popup */
@@ -147,6 +143,7 @@ input:focus::placeholder{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 23vw);
 	margin-top: 1vh;
+	margin-left: 18px;
 	/* flex-wrap: wrap; */
 	align-items: center;
 	/* justify-content: center; */
@@ -160,7 +157,7 @@ input:focus::placeholder{
 	justify-content: center;
 	align-items: center;
 	width: 20vw;
-	height: 35vh;
+	height: 20vw;
 	text-align: center;
 	border: var(--navy) thick solid;
 	background-color: var(--yellow);
@@ -187,7 +184,7 @@ input:focus::placeholder{
 	justify-content: center;
 	flex-direction: column;
 	width: 33vw;
-	padding: 25px;
+
 }
 #new-note-title {
 	font-size: 24px;
@@ -204,19 +201,31 @@ input:focus::placeholder{
 	width: 15vw;
 	height: 5vh;
 	font-size: 20px;
+	border-radius: 15px;
+	border: solid var(--navy);
 }
 #body-input {
 	width: 15vw;
 	height: 10vh;
 	font-size: 18px;
 	text-align: center;
+	border-radius: 15px;
+	border: solid var(--navy);
 }
 #create-button {
 	width: 10vw;
 	height: 5vh;
 	font-size: 24px;
 	font-weight: bold;
+	border: solid var(--navy);
+	border-radius: 15px;
+	color: var(--navy);
 }
+#create-button:hover{
+	opacity: 75%;
+	color: var(--red-orange);
+}
+
 #add-btn {
 	max-width: 5rem;
 	cursor: pointer;
@@ -224,4 +233,73 @@ input:focus::placeholder{
 }
 #add-btn:hover {
 	opacity: 65%;
+}
+@media only screen and (max-width: 600px) {
+	#control-bar-name-container{
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: center;
+	}
+	#title-container{
+		width: 0;
+	}
+	#control-bar-container {
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		margin-left: 0;
+	}
+	#search-bar-container {
+		align-self: center;
+		margin-bottom: 0;
+	}
+	#search-bar-label {
+		font-size: 2em;
+	}
+	#search-bar {
+		align-self: center;
+	}
+	#failed-search-alert {
+		font-size: 1.5em;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	#delete-all-container{
+		align-self: center;
+		margin-top: 0;
+	}
+	#delete-all {
+		width: 10em;
+		height: 2em;
+	}
+	#note-card-container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-left: 0;
+	}
+	.note-card{
+		width: 75vw;
+		height: 75vw;
+	}
+	#title-input {
+		width: 50vw;
+		height: 5vh;
+		font-size: 20px;
+		border-radius: 15px;
+		border: solid var(--navy);
+	}
+	#body-input {
+		width: 50vw;
+		height: 10vh;
+		font-size: 18px;
+		text-align: center;
+		border-radius: 15px;
+		border: solid var(--navy);
+	}
+	#create-button {
+		width: 25vw;
+		text-align: center;
+	}
 }
