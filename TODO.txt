@@ -1,0 +1,12 @@
+TO DO: 
+    Update HTML Layout
+        Integrate search bar in background of notes section?
+        Add a pencil in the upper right of notes to allow editing: http://simpleicon.com/wp-content/uploads/pencil.png
+            Reopens the create note section, but has the current text.
+    Fix note text overflow
+        If notes are too long, text overflows the div.
+        Shrink text to fit div?
+    POST BASIC IMPLEMENTATION: 
+        Media Queries
+        ReadME
+        

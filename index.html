@@ -5,11 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="icon" href="SplashArt.png" type="image/icon type">
+
+    <title>Stickee Notes</title>
+
 </head>
 <body>
-    
+        <div id="control-bar-container">
+            <div id="search-bar-container">
+                <label id="search-bar-label">
+                    Find Your Notes
+                    <input id="search-bar" name="search" placeholder="e.g. 'Appointment'">
+                </label>
+                <p id="failed-search-alert"></p>
+            </div>
+        
+            <div id="title-container">
+                <img src="StickeeNotesLogo.png" alt="" id="title-logo">
+            </div>
 
-    <script src="main.js"></script>
+            <div id="delete-all-container">
+                <button id="delete-all">
+                    <p id="delete-all-text">Throw Away All Notes</p>
+                </button>
+            </div>
+        </div>
+
+    <div id="note-card-container">
+        <div id="new-note-btn" class="note-card">
+            <h2 class="note-title"><img id="add-btn" src="./228122.png" alt="Add a new note"></h2>
+            <form id="new-note-form">
+                <label for="title-input" id="new-note-title">Title
+                    <br>
+                    <input id="title-input" type="text" placeholder="e.g., Groceries"> 
+                </label>
+                <br>
+                <label for="body-input" id="new-note-body" >
+                    Body 
+                    <br>
+                    <textarea id="body-input" cols="16" rows="3" placeholder="e.g., Bacon, eggs, and milk" required></textarea>
+                </label>
+                <br>
+                <button id="create-button" type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+
+    <div id='delete-popup'>
+        <div id="popup-content">
+            <h1 id='delete-text'>Are you sure you want to delete all notes?</h1>
+            <div id='yes-no'>
+                <button class="delete-popup-buttons" id='delete-yes'>Yes</button>
+                <button class="delete-popup-buttons" id='delete-no'>No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./notes-functions.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
